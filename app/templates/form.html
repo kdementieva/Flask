@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 class="funny-title">😄 Enter Your Details! 🦄</h1>
+    <form action="/submit" method="POST" class="funny-form">
+        <label for="name" class="funny-label">Your Super Cool Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email" class="funny-label">Your Awesome Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="color" class="funny-label">Your Favorite Color:</label><br>
+        <input type="color" id="color" name="color" required><br><br>
+
+        <div>
+          <label for="profession" class="funny-label">Your Profession:</label><br>
+          <select id="profession" name="profession" required>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="manager">Manager</option>
+          </select><br><br>
+        </div>
+
+        <p class="funny-label">Your Hobbies:</p>
+        <label><input type="checkbox" name="hobbies" value="books"> Books</label>
+        <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+        <label><input type="checkbox" name="hobbies" value="games"> Games</label><br><br>
+        
+        <p class="funny-label">Your Level:</p>
+        <label><input type="radio" name="level" value="beginner"> Beginner</label>
+        <label><input type="radio" name="level" value="advanced"> Advanced</label><br><br>
+
+        <div>
+          <button type="submit" class="funny-button">🚀 Let's Go!</button>
+        </div>
+      </form>
+
+      <div class="button-wrapper">
+        <button type="button" class="surprise-button" onclick="alert('😜 Nice try!')">
+            🎁 Surprise Button
+        </button>
+      </div>
+
+</body>
+</html>
