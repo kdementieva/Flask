@@ -1,6 +1,4 @@
-from flask import Flask
-
-app = Flask(__name__)
+from app import app
 
 @app.route('/hello')
 def hello():
@@ -27,6 +25,3 @@ def greet_age(name, age):
     if age > 0:
         return f"Hello, {name}. You are {age} years old."
     return "Age cannot be negative!"
-
-if __name__ == "__main__":
-    app.run(debug=True)
