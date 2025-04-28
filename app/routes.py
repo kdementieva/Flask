@@ -1,4 +1,5 @@
 from app import app
+from flask import render_template
 
 @app.route('/hello')
 def hello():
@@ -25,3 +26,15 @@ def greet_age(name, age):
     if age > 0:
         return f"Hello, {name}. You are {age} years old."
     return "Age cannot be negative!"
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
