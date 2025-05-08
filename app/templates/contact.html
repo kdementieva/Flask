@@ -11,6 +11,12 @@
 
 {% block content %}
     <h2>Contact Us</h2>
+    <div class="contacts">
+      <p style="font-weight: 600;">{{ contact_info.name }}:</p>
+      <p>{{ contact_info.address.street }}</p>
+      <p>{{ contact_info.address.city }}</p>
+      <p>{{ contact_info.address.zip }}</p>
+    </div>
     {% if success %}
       <p style="color: green; margin-bottom: 20px;">Your message has been sent successfully!</p>
     {% endif %}

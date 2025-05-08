@@ -12,6 +12,7 @@
     <h2>Welcome to My Flask App</h2>
     <p>Explore the website to learn more about us!</p>
     <img class="img" src="{{ url_for('static', filename='img/logo.png') }}" alt="Flask logo">
+    <p class="time">Current Time: {{ current_time.strftime('%A, %B %d, %Y %I:%M %p')}}</p>
 {% endblock %}
 </body>
 </html>

@@ -1,19 +1,34 @@
 from app import app
 from flask import render_template, request, redirect, url_for
 import re
+from datetime import datetime
 
 @app.route("/")
-def about():
-    return render_template("index.html")
+def home():
+    current_time = datetime.now()
+    return render_template("index.html", current_time=current_time)
 
 @app.route("/contact", methods=["GET"])
 def contact():
+    contact_info = {
+        'name': 'Customer Care Department',
+        'address': {
+            'street': '123 Main St',
+            'city': 'Wonderland',
+            'zip': '12345'
+        }
+    }
     success = request.args.get("success")
-    return render_template("contact.html", success=success)
+    return render_template("contact.html", success=success, contact_info=contact_info)
 
 @app.route("/about")
-def form():
-   return render_template("about.html")
+def about():
+    team_members = [
+        {'name': 'Alice', 'role': 'Developer'},
+        {'name': 'Bob', 'role': 'Designer'},
+        {'name': 'Charlie', 'role': 'Project Manager'}
+    ]
+    return render_template("about.html", team_members=team_members)
 
 @app.route("/submit", methods=["POST", "GET"])
 def submit():
